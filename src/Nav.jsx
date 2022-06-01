@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import expenses from "./expenses";
-import invoices from "./invoices";
+import Expenses from "./expenses";
+import Invoices from "./invoices";
 import Counters from "./components/Counters"
 import Page from "./Page";
 
