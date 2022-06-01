@@ -2,36 +2,55 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    tags: []
+    value: this.props.value,
   };
 
-  renderTags(){
-    if (this.state.tags.length === 0) return 'No data';
+  // constructor() {
+  //   super()
+  //   console.log(this);
+  //   this.handleIncrement = this.handleIncrement.bind(this);
+  // }
 
-    return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+  renderTags() {
+    if (this.state.tags.length === 0) return "No data";
+
+    return (
+      <ul>
+        {this.state.tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+    );
   }
 
+  handleIncrement = (product) => {
+    this.setState({ value: this.state.value + 1 });
+  };
+
   render() {
-    
     return (
       <div className="m-2">
         <span className={this.getTextClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-primary btn-sm m-2">button</button>
-        {this.state.tags.length === 0 && "Please input data"}
-        {this.renderTags()}
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-primary btn-sm m-2"
+        >
+          button
+        </button>
+        {/* {this.state.tags.length === 0 && "Please input data"}
+        {this.renderTags()} */}
       </div>
     );
   }
 
   getTextClasses() {
     let classes = "badge badge-danger text-";
-    classes += this.state.count === 0 ? "danger" : "dark";
+    classes += this.state.value === 0 ? "danger" : "dark";
     return classes;
   }
 
   formatCount() {
-    let { count } = this.state;
+    let { value: count } = this.state;
     return count === 0 ? "Zero" : count;
   }
 
