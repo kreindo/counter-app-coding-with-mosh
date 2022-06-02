@@ -1,23 +1,21 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Expenses from "./expenses";
-import Invoices from "./invoices";
-import Counters from "./components/Counters"
-import Page from "./Page";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <BrowserRouter>
-    <Routes>
-      <React.StrictMode>
-        <Route path="/" element={<Counters />} />
-        <Route path="./Page" element={<Page />} />
-        <Route path="./expenses" element={<expenses />} />
-        <Route path="./invoices" element={<invoices />} />
-      </React.StrictMode>
-    </Routes>
-  </BrowserRouter>
-  )
+    <div>
+      <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+        }}
+      >
+        <Link to="/">Counter</Link> |{" "}
+        <Link to="/TestSite">Website</Link> |{" "}
+        <Link to="/expenses">Expenses</Link>
+      </nav>
+    </div>
+  );
 }
 
-export default Nav
+export default Nav;

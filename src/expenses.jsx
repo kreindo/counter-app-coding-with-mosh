@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Nav from "./Nav";
 
 function Expenses() {
   return (
-    <div>expenses</div>
-  )
+    <div>
+      <Nav />
+      expenses
+    </div>
+  );
 }
 
-export default Expenses
+export default Expenses;
