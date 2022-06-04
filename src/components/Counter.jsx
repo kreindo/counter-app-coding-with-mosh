@@ -40,7 +40,7 @@ class Counter extends Component {
   }
 
   getTextClasses() {
-    let classes = "text-dark badge bg-";
+    let classes = "text-light badge bg-";
     classes += this.props.counter.value === 0 ? "secondary" : "primary";
     return classes;
   }

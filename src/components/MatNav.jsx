@@ -36,7 +36,7 @@ const MatNav = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar sx = {{backgroundColor: '#3e2723'}}position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -55,7 +55,7 @@ const MatNav = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            krndev
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -111,7 +111,7 @@ const MatNav = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            krndev
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
